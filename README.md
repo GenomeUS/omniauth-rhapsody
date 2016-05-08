@@ -1,4 +1,4 @@
-# rhapsody OmniAuth Strategy
+# Rhapsody OmniAuth Strategy
 
 This gem provides a simple way to authenticate to Rhapsody Web API using OmniAuth with OAuth2.
 
