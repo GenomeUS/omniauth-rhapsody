@@ -1,11 +1,14 @@
-require 'omniauth/strategies/oauth2'
+require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
     class Rhapsody < OmniAuth::Strategies::OAuth2
+      include OmniAuth::Strategy
       # Give your strategy a name.
       option :name, 'rhapsody'
 
+      option :fields, [:name, :email]
+      option :uid_field, :email
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
       option :client_options, {
@@ -13,6 +16,8 @@ module OmniAuth
         :authorize_url => 'https://api.rhapsody.com/oauth/authorize',
         :token_url     => 'https://api.rhapsody.com/oauth/token',
       }
+
+      uid{ raw_info['id'] }
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
@@ -42,7 +47,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/me').parsed
+        @raw_info ||= access_token.get('/me/listens').parsed
       end
     end
   end
