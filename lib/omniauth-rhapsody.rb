@@ -14,7 +14,7 @@ module OmniAuth
       option :client_options, {
         :site          => 'https://api.rhapsody.com/v1',
         :authorize_url => 'https://api.rhapsody.com/oauth/authorize',
-        :token_url     => 'https://api.rhapsody.com/oauth/token',
+        :token_url     => 'https://api.rhapsody.com/oauth/access_token',
       }
 
       uid{ raw_info['id'] }
