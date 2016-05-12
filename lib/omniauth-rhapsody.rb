@@ -21,9 +21,9 @@ module OmniAuth
         {
           # display_name may be empty if user does not request
           #  'user-read-private'
-          :name => raw_info['display_name'] || raw_info['id'],
-          :nickname => raw_info['id'],
-          :email => raw_info['email'],
+          :uid => raw_info['id'],
+          :name => raw_info['realName'],
+          :email => raw_info['email']
         }
       end
 
@@ -32,12 +32,6 @@ module OmniAuth
       # additional calls (if the user id is returned with the token
       # or as a URI parameter). This may not be possible with all
       # providers.
-
-      extra do
-        {
-          'raw_info' => raw_info
-        }
-      end
 
 
       def raw_info
