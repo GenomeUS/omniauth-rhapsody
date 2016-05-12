@@ -20,8 +20,9 @@ module OmniAuth
       info do
         {
           :uid => raw_info['me']['id'],
-          :name => raw_info['realName'],
-          :email => raw_info['email']
+          :name => raw_info['me']['realName'],
+          :username => raw_info['me']['screenName'],
+          :image => raw_info['me']['avatar']
         }
       end
 
