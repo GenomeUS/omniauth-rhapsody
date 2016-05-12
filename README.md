@@ -1,3 +1,6 @@
+
+[![Gem Version](https://badge.fury.io/rb/omniauth-rhapsody.svg)](https://badge.fury.io/rb/omniauth-rhapsody)
+
 # Rhapsody Music OmniAuth Strategy
 
 This gem provides a simple way to authenticate to Rhapsody Web API using OmniAuth with OAuth2.
