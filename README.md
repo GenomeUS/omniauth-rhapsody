@@ -41,7 +41,7 @@ config.omniauth :rhapsody, 'app_id', 'app_secret', scope: 'playlist-read-private
 ## Auth Hash Schema
 
 Here's an example auth hash, available in `request.env['omniauth.auth']`:
-
+```
   { "provider":"rhapsody",
      "uid":"A155SDLKJLKSFJLKJLSKJD30A96033200CA",
      "info":
@@ -104,6 +104,7 @@ Here's an example auth hash, available in `request.env['omniauth.auth']`:
         }
       }
     }
+```
 
 ```ruby
 *** To Be Added ***
