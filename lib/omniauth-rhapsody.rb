@@ -15,17 +15,15 @@ module OmniAuth
         :token_url     => 'https://api.rhapsody.com/oauth/access_token',
       }
 
-      uid{ raw_info['id'] }
+      uid{ raw_info['me']['id'] }
 
-      # info do
-      #   {
-      #     # display_name may be empty if user does not request
-      #     #  'user-read-private'
-      #     :uid => raw_info['id'],
-      #     :name => raw_info['realName'],
-      #     :email => raw_info['email']
-      #   }
-      # end
+      info do
+        {
+          :uid => raw_info['me']['id'],
+          :name => raw_info['realName'],
+          :email => raw_info['email']
+        }
+      end
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
