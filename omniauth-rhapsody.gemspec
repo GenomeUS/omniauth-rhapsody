@@ -2,14 +2,15 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth-rhapsody/version'
+require 'omniauth/strategies/rhapsody'
 
 Gem::Specification.new do |gem|
   gem.name          = "omniauth-rhapsody"
   gem.version       = Omniauth::Rhapsody::VERSION
   gem.authors       = ["Matt Fitz-Henry"]
   gem.email         = ["matt@geno.me\n"]
-  gem.description   = %q{OmniAuth strategy for Rhapsody}
-  gem.summary       = %q{OmniAuth strategy for Rhapsody}
+  gem.description   = %q{OmniAuth strategy for Rhapsody Music Service}
+  gem.summary       = %q{OmniAuth strategy for Rhapsody Music Service}
   gem.homepage      = "https://github.com/GenomeUS/omniauth-rhapsody.git"
 
   gem.files         = `git ls-files`.split($/)
